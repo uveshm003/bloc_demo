@@ -1,6 +1,4 @@
 import 'package:bloc_demo/login_form_demo/bloc/bloc/auth_bloc.dart';
-import 'package:bloc_demo/login_form_demo/bloc/bloc/auth_event.dart';
-import 'package:bloc_demo/login_form_demo/bloc/bloc/auth_state.dart';
 import 'package:bloc_demo/login_form_demo/home.dart';
 import 'package:bloc_demo/login_form_demo/widget/gradient_button.dart';
 import 'package:bloc_demo/login_form_demo/widget/login_field.dart';
@@ -28,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(
-                  state.errorMessage,
+                  state.error,
                 ),
               ),
             );
@@ -64,8 +62,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(height: 50),
                   const SocialButton(
-                      iconPath: 'assets/svgs/g_logo.svg',
-                      label: 'Continue with Google'),
+                    iconPath: 'assets/svgs/g_logo.svg',
+                    label: 'Continue with Google',
+                  ),
                   const SizedBox(height: 20),
                   const SocialButton(
                     iconPath: 'assets/svgs/f_logo.svg',
