@@ -1,4 +1,5 @@
 import 'package:bloc_demo/login_form_demo/bloc/bloc/auth_bloc.dart';
+import 'package:bloc_demo/login_form_demo/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +17,9 @@ class MyLoginFormApp extends StatelessWidget {
           useMaterial3: true,
         ),
         initialRoute: '/',
-        routes: {},
+        routes: {
+          '/home': (context) => HomeScreen(),
+        },
       ),
     );
   }

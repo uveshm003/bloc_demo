@@ -2,7 +2,9 @@ import 'package:bloc_demo/login_form_demo/palette.dart';
 import 'package:flutter/material.dart';
 
 class GradientButton extends StatelessWidget {
-  const GradientButton({super.key});
+  const GradientButton({super.key, required this.onLoginTap});
+
+  final VoidCallback onLoginTap;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class GradientButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(7),
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onLoginTap,
         style: ElevatedButton.styleFrom(
           fixedSize: const Size(395, 55),
           backgroundColor: Colors.transparent,
